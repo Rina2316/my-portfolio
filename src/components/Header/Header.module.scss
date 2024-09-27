@@ -1,0 +1,67 @@
+@import "../../styles/abstracts/fonts.scss";
+@import "../../styles/abstracts/variables.scss";
+.header {
+	padding: 2rem;
+color:rgba(0, 0, 0, 0.945);
+background-color: transparent;
+	text-align: center;
+	font-family:$Htag-font;
+	text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.747), -0.5px -0.5px 0 rgba(0, 0, 0, 0.747), 0.5px -0.5px 0 rgba(0, 0, 0, 0.747), -0.5px 0.5px 0 rgba(0, 0, 0, 0.747);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap:4rem;
+
+	
+	
+
+	.headerCooperation{
+		display: flex;
+		align-items: center;
+		
+	}
+
+	.imageLines{
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		justify-content: center; 
+
+
+		&::before,
+		&::after {
+		  content: '';
+		  flex: 1;
+		  height: 0.5rem;
+		  background-color: rgba(0, 0, 0, 0.884); 
+		}
+	 
+		&::before {
+		  margin-right: 20px; 
+		}
+	 
+	
+		&::after {
+		  margin-left: 20px; 
+		}
+	
+
+	.imageWrapper{
+		position: relative;
+		width: 15.5rem; 
+		border: 1rem solid rgba(0, 0, 0, 0.856);
+		border-radius: 50%;
+		height: 17rem;
+		overflow: hidden;
+
+
+		.image{
+			object-fit: cover;
+		}
+	}}
+	
+
+	
+ }
+ 

@@ -1,0 +1,19 @@
+@import "../../styles/abstracts/fonts.scss";
+
+
+.mainPageWrapper{
+	height: 500vh;
+	margin: 3rem;
+
+	.greeting{
+		max-width: 80rem;
+		font-family: $Htag-font;
+		font-weight: 600;
+		margin: 0 auto;
+		border-left: 0.4rem solid black;
+		border-right: 0.4rem solid black;
+		padding:0 1rem;
+		text-align: center;
+
+	}
+}

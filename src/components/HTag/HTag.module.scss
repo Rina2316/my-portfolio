@@ -1,0 +1,44 @@
+// HTag.module.scss
+
+@import "../../styles/abstracts/mixins.scss"; // Путь к миксинам
+
+.h1 {
+  font-weight: 600;
+  font-size: 6rem;
+  line-height: 120%;
+  padding: 0;
+		margin: 0;
+
+  @include respond(phone) {
+    font-size: 5rem; 
+  }
+
+}
+
+.h2 {
+  font-weight: 600;
+  font-size: 4.5rem;
+  line-height: 120%;
+  padding: 0;
+		margin: 0;
+
+  @include respond(phone) {
+    font-size: 3.5rem; 
+  }
+
+
+}
+
+.h3 {
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 120%;
+  padding: 0;
+		margin: 0;
+
+  @include respond(phone) {
+    font-size: 2.5rem; 
+  }
+
+
+}
