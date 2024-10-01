@@ -1,9 +1,9 @@
 import styles from "./Cooperation.module.scss";
 import cn from 'classnames';
 import { CooperationProps } from "./Cooperation.props";
-import Telegram from "../../app/icons/Telegram.svg?icon";
-import Mail from "../../app/icons/Mail.svg?icon";
-import Phone from "../../app/icons/Phone.svg?icon";
+import Telegram from "../../app/public/icons/Telegram.svg?icon";
+import Mail from "../../app/public/icons/Mail.svg?icon";
+import Phone from "../../app/public/icons/Phone.svg?icon";
 import { toast } from 'react-hot-toast';
 
 

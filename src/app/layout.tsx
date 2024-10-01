@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       const scrollRatio = scrollTop / documentHeight;
 
       // Изменение прозрачности черного слоя
-      const newOpacity = scrollRatio * 1; 
+      const newOpacity = scrollRatio * 0.8; 
       document.documentElement.style.setProperty('--overlay-opacity', newOpacity.toString());
     };
 
@@ -34,11 +34,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     };
   }, []);
 
+  
+
   return (
-    <html lang={currentLocale} className={styles.wrapper}>
+    <html
+     lang={currentLocale} 
+     className={styles.wrapper}>
       <I18nProvider locale={currentLocale}>
-      <body>
-        
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Frontend-разработчик с опытом в React, Next.js, TypeScript и адаптивной верстке. Создаю современные, быстрые и удобные веб-приложения с акцентом на UI/UX." />
+        <meta name="keywords" content="frontend разработчик, React, TypeScript, Next.js, SCSS, CSS, веб-разработка, UI/UX дизайн, SPA (Single Page Applications)" />
+        <meta name="author" content="Жаркова Екатерина" />
+        <title>Мое портфолио</title>
+        <link rel="icon" href="/favicon.ico"/> 
+        <meta property="og:title" content="Мое портфолио" />
+        <meta property="og:description" content="Frontend-разработчик с опытом в React, Next.js, TypeScript и адаптивной верстке." />
+        <meta property="og:image" content="https://example.com/path/to/your/image.jpg" /> {/* Укажите путь к изображению */}
+        <meta property="og:url" content="https://example.com" /> {/* Укажите URL вашей страницы */}
+        <meta property="og:type" content="website" />
+      </head>
+      <body> 
+     
           <Header />
           <main>
             <Toaster />
@@ -46,7 +64,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </main>
           <Footer />
         
-      </body></I18nProvider>
+      </body>
+      </I18nProvider>
     </html>
   );
 }

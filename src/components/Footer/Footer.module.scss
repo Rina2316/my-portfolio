@@ -1,7 +1,43 @@
-
+@import "../../styles/abstracts/fonts.scss";
 .footer {
-	padding: 1rem;
+	position: relative;
+	display: flex;
+	justify-content: center; /* Горизонтальное центрирование */
+	align-items: center;     /* Вертикальное центрирование */
+	font-family: $Htag-font;
+	padding-top: 10rem;
+	color:black;
+	font-weight: 700;
 
-	text-align: center;
- }
  
+ .date {
+	display: flex;
+	justify-content: center; /* Горизонтальное центрирование внутри элемента */
+	align-items: center;     /* Вертикальное центрирование внутри элемента */
+	text-align: center;
+	border: 0.3rem solid black;
+	border-radius: 50%;
+	height: 5rem;
+	width: 10rem;
+	padding: 0.3rem;
+	background-color:rgba(185, 183, 176, 0.884)
+ }
+
+
+ 
+
+
+.ornamentWrapper {
+	position: absolute; /* Делает орнамент позиционированным */
+
+
+	width: 100vw; /* Орнамент растягивается на всю ширину экрана */
+	 /* Орнамент растягивается по высоте на все пространство хедера */
+	z-index: -1; /* Размещает орнамент за контентом */
+	transform: rotate(-180deg); 
+ height: 20rem;
+	.imageOrnament {
+	  object-fit: cover; /* Заполняет блок без сохранения пропорций */
+	  width: 100%; /* Изображение растягивается на ширину контейнера */
+	  height: 100%; /* Изображение растягивается на высоту контейнера */
+	}}}

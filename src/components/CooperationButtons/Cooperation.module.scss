@@ -10,7 +10,19 @@
 	padding: 0.5rem 1rem;
 	cursor: pointer;
 	transition: background-color 0.3s;
- 
-	
- }
- 
+	&:hover svg {
+		filter: drop-shadow(0 0 10px #680b0194); 
+		
+	 }
+	 @media (max-width: 480px) {
+		height: 5rem;
+		width: 5rem;
+		filter: drop-shadow(0 0 10px #680b0194); 
+		
+	 }
+  
+  
+  svg {
+	 transition: filter 0.5s ease; 
+  }
+}

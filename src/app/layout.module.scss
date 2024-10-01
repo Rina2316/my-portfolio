@@ -6,8 +6,9 @@
   position: relative;
   min-height: 100vh;
   max-width: 144rem;
+ 
 
-background-color: rgb(248, 247, 239);
+background-color: rgba(216, 214, 206, 0.856);
  
   &::before {
     content: '';
@@ -16,14 +17,17 @@ background-color: rgb(248, 247, 239);
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.685);
+    background-color: rgba(0, 0, 0, 0.493);
     opacity: var(--overlay-opacity, 0); 
     transition: opacity 0.5s ease-in-out; 
     z-index: 1;
   }
 
   body {
+     
+    overflow-x: hidden;
     position: relative;
     z-index: 2; 
+    
   }
 }

@@ -1,13 +1,6 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-	
-	// i18n: {
-	// 	locales: ['en', 'ru'], // Поддерживаемые языки
-	// 	defaultLocale: 'en',   // Язык по умолчанию — английский
-	// 	localeDetection: false, // Отключаем автоматическое определение языка
-	//  }
-	//  ,
 	webpack(config) {
 	  const fileLoaderRule = config.module.rules.find((rule) =>
 		 rule.test?.test?.('.svg'),

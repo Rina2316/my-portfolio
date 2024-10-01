@@ -10,7 +10,8 @@ interface I18nProviderProps {
 const I18nContext = createContext<"en"| "ru">("en");
 
 export const I18nProvider: React.FC<I18nProviderProps> = ({ locale, children }) => {
-  useEffect(() => {    
+
+  useEffect(() => {
     i18n.changeLanguage(locale || 'en'); 
   }, [locale]);
 

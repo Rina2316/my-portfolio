@@ -1,0 +1,90 @@
+.mainWrapper{
+	margin: 10rem 0rem;
+
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); 
+gap: 7rem;
+	.cardWrapper{
+display: flex;
+position: relative;
+@media (max-width: 480px) {
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+}
+
+.readMore, .dots {
+	color:  #680b01c5;
+	cursor: pointer;
+	font-size: 2rem;
+	margin-top: 2rem;
+	margin-left: 2rem;
+	margin-bottom: 2rem;
+	user-select: none; 
+	@media (max-width: 480px) {
+		margin-left:0 ;
+		margin-top: 0;
+		font-size: 1.7rem;
+	}
+ }
+ 
+ .name{
+	cursor: pointer;
+ }
+
+		.title{
+			position: absolute;
+			top:32%;
+			left:-20%;
+			transform: rotate(-90deg);
+			@media (max-width: 480px) {
+				
+				text-align: center;
+				top:-15%;
+			left:32%;
+				transform: rotate(0deg);
+			}
+			
+	
+		}
+		.icon{
+			
+			
+width: 10rem;
+height: 10rem;
+@media (max-width: 480px) {
+	width: 7rem;
+	height: 7rem;
+	filter: drop-shadow(0 0 10px #680b0194);
+}
+
+		}
+		&:hover svg {
+			filter: drop-shadow(0 0 10px #680b0194); /* Красноватое свечение при наведении */
+		 }
+	  
+	  
+	  svg {
+		 transition: filter 0.5s ease; /* Плавный переход для свечения */
+	  }
+		
+
+		.info{
+			border-right: 0.4rem solid black;
+			cursor: pointer;
+			
+			padding:0 5rem  ;
+			@media (max-width: 480px) {
+				border-right: none;
+			}
+		}
+		
+	}
+	
+	@media (max-width: 480px) {
+		margin: 5rem 0 7rem;
+		display: flex;
+		flex-direction: column;
+		gap:5rem;
+	}
+}
