@@ -1,0 +1,196 @@
+@import "../../styles/abstracts/fonts.scss";
+@import "../../styles/abstracts/variables.scss";
+
+.header {
+	padding: 2rem;
+	color: rgba(0, 0, 0, 0.945);
+	background-color: transparent;
+	text-align: center;
+	font-family: $Htag-font;
+	text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.747), -0.5px -0.5px 0 rgba(0, 0, 0, 0.747), 0.5px -0.5px 0 rgba(0, 0, 0, 0.747), -0.5px 0.5px 0 rgba(0, 0, 0, 0.747);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 4rem;
+	position: relative;
+	
+
+	.ornamentWrapper {
+	  position: absolute; /* Делает орнамент позиционированным */
+	  top: 0;
+	  left: -33rem;
+	  width: 100rem; /* Орнамент растягивается на всю ширину экрана */
+	  height: 20rem; /* Орнамент растягивается по высоте на все пространство хедера */
+	  z-index: -1; /* Размещает орнамент за контентом */
+	  overflow: hidden; /* Скрывает все лишнее */
+	  transform: rotate(-50deg); /* Заменить -5deg на нужный угол наклона */
+  
+	  
+	
+	  .imageOrnament {
+		 object-fit: cover; /* Заполняет блок без сохранения пропорций */
+		 width: 100%; /* Изображение растягивается на ширину контейнера */
+		 height: 100%; /* Изображение растягивается на высоту контейнера */
+	  }
+	}
+
+	.ornamentWrapperTwo{
+		position: absolute; /* Делает орнамент позиционированным */
+		top: 0;
+		right: -33rem;
+		width: 100rem; /* Орнамент растягивается на всю ширину экрана */
+		height: 20rem; /* Орнамент растягивается по высоте на все пространство хедера */
+		z-index: -1; /* Размещает орнамент за контентом */
+		overflow: hidden; /* Скрывает все лишнее */
+		transform: rotate(50deg); /* Заменить -5deg на нужный угол наклона */
+	
+		
+		.imageOrnament {
+			object-fit: cover; /* Заполняет блок без сохранения пропорций */
+			width: 100%; /* Изображение растягивается на ширину контейнера */
+			height: 100%; /* Изображение растягивается на высоту контейнера */
+		 }
+	}
+ 
+	.headerCooperation {
+	  display: flex;
+	  align-items: center;
+	}
+ 
+	.imageLines {
+	 position: relative;
+	  display: flex;
+	  align-items: center;
+	  width: 100%;
+	  justify-content: center;
+ 
+	  &::before,
+	  &::after {
+		 content: '';
+		 flex: 1;
+		 height: 0.5rem;
+		 background-color: rgba(0, 0, 0, 0.884);
+	  }
+ 
+	  &::before {
+		 margin-right: 20px;
+	  }
+ 
+	  &::after {
+		 margin-left: 20px;
+		 
+	  }
+
+	  
+	 .shortLine {
+		position: absolute;
+		width: 20rem; // Длина короткой линии
+		height: 0.5rem; // Высота линии
+		background-color: rgba(0, 0, 0, 0.884); // Цвет линии
+	 }
+  
+	 .shortLineTop {
+		top: 7rem; 
+	
+		left: calc(50% - 28rem); // Центрирование и смещение влево
+	 }
+
+	 .shortLineTopTwo {
+		top: 7rem; 
+	
+		right: calc(50% - 28rem); // Центрирование и смещение влево
+	 }
+
+  
+	 .shortLineBottom {
+		bottom: 7rem; 
+		
+		left: calc(50% - 28rem); // Центрирование и смещение влево
+	 }
+
+	 .shortLineBottomTwo {
+		bottom: 7rem; 
+		
+		right: calc(50% - 28rem); // Центрирование и смещение влево
+	 }
+
+	  
+
+	  .imageWrapper {
+		 position: relative;
+		 width: 15.5rem;
+		 border: 1rem solid rgba(0, 0, 0, 0.856);
+		 border-radius: 50%;
+		 height: 17rem;
+		 overflow: hidden;
+ 
+		 .image {
+			object-fit: cover;
+		 }
+		 @media (max-width: 768px) {
+			width: 18rem;
+			height: 25.5rem;
+		 }
+	  }
+	}
+
+	
+	@media (max-width: 768px) {
+		gap:0.5rem;
+	
+	
+		.headerCooperation{
+			margin-bottom: 6.5rem;
+		}
+		.imageLines {
+			&::before,
+			&::after {
+				display: none; // Скрываем линии
+			}
+		}
+
+		
+	}
+
+	@media (max-width: 480px) {
+		.headerh1 {
+			font-size: 2.7rem;
+		}
+		
+
+
+		.imageLines {
+			.shortLine {
+				display: none; // Уменьшаем длину короткой линии
+			}
+		}
+
+		
+	}
+
+	.ornamentWrapper {
+		transform: rotate(-45deg);
+		@media (max-width: 768px) {
+			
+			left: -20rem; 
+		}
+
+		@media (max-width: 480px) {
+			top:1rem;
+			left: -10rem; 
+		}
+	}
+
+	.ornamentWrapperTwo {
+		transform: rotate(45deg);
+		@media (max-width: 768px) {
+			
+			right: -20rem; 
+		}
+
+		@media (max-width: 480px) {
+			top:1rem;
+			right: -10rem; 
+		}
+	}
+ }

@@ -1,101 +1,118 @@
-import Image from "next/image";
+"use client";
+// import React, { useEffect } from 'react';
+// import { useTranslation } from 'react-i18next';
+import styles from './home.module.scss';
+import Paragraph from "../components/Paragraph/Paragraph";
+import Htag from '../components/HTag/HTag';
+import Technology from '../components/TehnologyLent/Texnology';
+import Works from '../components/Works/Works';
+import { projects } from '../components/Works/projects';
+import Form from "../components/Form/Form";
+import Menu from '../components/Menu/Menu';
+import ScrollToTopButton from '../components/ScrollToTopButton/ScrollToTopButton';
 
-export default function Home() {
+// import { usePathname } from 'next/navigation';
+// import i18n from '../I18n/i18n';
+
+const Home: React.FC = () => {
+  //  const pathName=usePathname();
+  //   const { t } = useTranslation('common');
+  // useEffect(() => {
+  //   console.log(pathName)
+  // }, [pathName]);
+
+  // Логика обрезания текста для проектов
+  const modifiedProjects = projects.map((project) => {
+    const maxLength = 100; // Максимальная длина текста, после которой обрезается
+    const isLongText = project.description.length > maxLength;
+
+    return {
+      ...project,
+      shortDescription: isLongText
+        ? project.description.slice(0, maxLength) + "..."
+        : project.description,
+      isLongText, // добавляем флаг, чтобы использовать в компоненте Works
+    };
+  });
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className={styles.mainPageWrapper}>
+      <Menu />
+      <ScrollToTopButton />
+      <Paragraph size="l" className={styles.greetingANDTechno}>
+        Привет! Добро пожаловать на страницу с моим портфолио.
+        Меня зовут Жаркова Екатерина, и я Frontend-разработчик. Мой путь как веб-разработчика
+        начался с сотрудничества с замечательной грузинской компанией Ambition, а также с интересных проектов на фрилансе.
+        Здесь ты можешь узнать о технологиях, с которыми я работаю, посмотреть проекты, которые я реализовала,
+        и познакомиться с моим опытом работы наглядно.
+      </Paragraph>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className={styles.firstBlock} id="aboutMe">
+        <div className={styles.aboutMe}>
+          <Htag tag="h2">О себе</Htag>
+          <Paragraph size="l">
+            Я работаю с технологиями, которые помогают создавать современные,
+            удобные и функциональные веб-приложения. Умею разрабатывать интерфейсы,
+            которые сочетают эстетику и удобство, а также интегрировать их с backend-решениями.
+            Постоянно учусь и стремлюсь совершенствовать свои навыки.
+            В будущем планирую стать full-stack разработчиком, чтобы охватить полный цикл разработки.
+          </Paragraph>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className={styles.workExperience}>
+          <Htag tag="h2">Опыт работы</Htag>
+          <Paragraph size="l">
+            Моё последнее место работы — компания Ambition. На этой позиции я взяла на себя множество обязанностей, начиная от верстки до разработки и интеграции сложных систем.
+          </Paragraph>
+        </div>
+      </div>
+
+      <div className={styles.secondBlock}>
+        <div className={styles.firstList}>
+          <Htag tag="h3">Обязанности</Htag>
+          <ul>
+            <li>Верстка адаптивных и кроссбраузерных интерфейсов</li>
+            <li>Интеграция frontend с backend API</li>
+            <li>Разработка админки с использованием React Admin</li>
+          </ul>
+        </div>
+
+        <div className={styles.secondList}>
+          <Htag tag="h3">Достижения</Htag>
+          <ul>
+            <li>Разработка проекта с нуля до MVP</li>
+            <li>Создание современного дизайна, адаптированного под пользователей</li>
+            <li>Успешное развитие проекта и расширение его функционала</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="projects">
+        <Htag tag="h2" className={styles.tag}>Проекты</Htag>
+        <Paragraph size="l" className={styles.tag}>
+       Ниже представлены мои работы, с которыми вы можете ознакомится наглядно, нажав на иконку.
+        </Paragraph>
+        
+        <Works projects={modifiedProjects} />
+      </div>
+
+      <div id="technologies">
+        <Htag tag="h2" className={styles.tag}>Технологии</Htag>
+        <Paragraph size="l" className={styles.greetingANDTechno}>
+          Я работаю с такими технологиями, как React, Next.js, TypeScript, SCSS,
+          а также использую инструменты для анимаций, такие как Framer Motion.
+        </Paragraph>
+        <Technology />
+      </div>
+
+      <div id="contact">
+        <Htag tag="h3" className={styles.tag}>
+          Для вашего удобства вы можете оставить сообщение через форму ниже, и я свяжусь с вами в ближайшее время...
+        </Htag>
+      </div>
+
+      <Form />
     </div>
   );
-}
+};
+
+export default Home;
