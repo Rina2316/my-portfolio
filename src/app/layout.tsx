@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   useEffect(() => {
     const locale = pathname.split('/')[1] || 'en'; 
-    setCurrentLocale(locale);
+    setCurrentLocale(locale?.replace('/', ''));    
   }, [pathname]); // Эффект срабатывает при изменении пути
 
   useEffect(() => {

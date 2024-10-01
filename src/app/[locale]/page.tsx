@@ -7,25 +7,24 @@ import { usePathname } from 'next/navigation';
 import i18n from '../I18n/i18n';
 
 const Home: React.FC = () => {
- const pathName=usePathname();
+  const pathname = usePathname();
 
 
   const { t } = useTranslation('common');
 
 
   useEffect(() => {
-    // const language = Array.isArray(locale) ? locale[0] : locale; // Берем первый элемент, если это массив
-    // if (language) {
-    //   i18n.changeLanguage(language);
-    // }
-    console.log(pathName)
-  }, [pathName]);
+    const locale = pathname.split('/')[1] || 'en';
+     
+    if (locale) {
+      i18n.changeLanguage(locale.replace('/', ''));
+    }
+  }, [pathname]);
 
   return (
     <div className={styles.mainPageWrapper}>
       <Paragraph size="l" className={styles.greeting}>
         {t('welcome')}
-        fffffffff
       </Paragraph>
     </div>
   );
