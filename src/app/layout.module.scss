@@ -6,7 +6,9 @@
   position: relative;
   min-height: 100vh;
   max-width: 144rem;
- 
+  @media (max-width: 480px) {
+    max-width: 50rem;
+  }
 
 background-color: rgba(216, 214, 206, 0.856);
  
