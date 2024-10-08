@@ -3,6 +3,7 @@ import Paragraph from '../Paragraph/Paragraph';
 import Htag from '../HTag/HTag';
 import WorksIcon from "../../app/public/icons/works.svg?icon";
 import styles from "./Works.module.scss";
+import { useTranslation } from 'react-i18next';
 
 interface Project {
   name: string;
@@ -15,9 +16,10 @@ interface WorksProps {
 }
 
 const Works: React.FC<WorksProps> = ({ projects }) => {
+  
   // Состояние для контроля раскрытия описаний проектов
   const [expandedProjects, setExpandedProjects] = useState<boolean[]>(Array(projects.length).fill(false));
-
+  const { t } = useTranslation('common');
   // Функция для переключения состояния раскрытия текста
   const toggleDescription = (index: number) => {
     const updatedExpandedProjects = [...expandedProjects];
@@ -68,14 +70,14 @@ const Works: React.FC<WorksProps> = ({ projects }) => {
                 className={styles.readMore}
                 onClick={() => toggleDescription(index)}
               >
-                Читать дальше
+                {t('readMore')}
               </span>
             ) : (
               <span
                 className={styles.dots}
                 onClick={() => toggleDescription(index)}
               >
-                Обратно
+                 {t('readMore2')}
               </span>
             )}
           </div>

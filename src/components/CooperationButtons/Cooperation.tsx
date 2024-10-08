@@ -7,6 +7,7 @@ import Phone from "../../app/public/icons/Phone.svg?icon";
 import { toast } from 'react-hot-toast';
 
 
+
 const SocialMediaButton = ({
 	className,
 	socialLink,
@@ -34,11 +35,11 @@ const SocialMediaButton = ({
 		  const phoneNumber = socialLink.replace('tel:', '');
 		  navigator.clipboard.writeText(phoneNumber) 
 			 .then(() => {
-				toast.success('Номер телефона скопирован в буфер обмена!');;
+				toast.success('😃');;
 			 })
 			 .catch(err => {
 				console.error('Ошибка при копировании номера: ', err)
-				toast.error('Ошибка при копировании номера!');
+				toast.error('😢');
 			 });
 		} else {
 		  // Открываем ссылку для других соцсетей

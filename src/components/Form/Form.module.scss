@@ -124,23 +124,34 @@
 	  margin-top: 5px;
 	}
  
-	.submitButton {
-	  background-color: #4d0a02;
-	  color: rgba(185, 183, 176, 0.938);
-	  border: none;
-	  padding: 12px 20px;
-	  border-radius: 4px;
-	  cursor: pointer;
-	  font-size: 2rem;
-	  font-weight: 600;
-	  transition: background-color 0.3s ease;
-	  font-family: $Htag-font;
-	  font-weight: 700;
-
- 
-	  &:hover {
-		 background-color: #3d0701;
-	  }
+	.submitButton {background-color: #4d0a02;
+		color: rgba(185, 183, 176, 0.938);
+		border: none;
+		padding: 12px 20px;
+		border-radius: 8px; // Сделал радиус чуть больше для мягкости
+		cursor: pointer;
+		font-size: 1.8rem;
+		font-weight: 600;
+		transition: background-color 0.3s ease, box-shadow 0.3s ease; // Добавлен плавный переход для теней
+		font-family: $Htag-font;
+		font-weight: 700;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06); // Добавлена тень
+	 
+		&:hover {
+		  background-color: #3d0701;
+		  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1); // Более интенсивная тень при наведении
+		}
+	 
+		&:active {
+		  background-color: #2d0501; // Немного затемненный цвет при клике
+		  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Уменьшение тени при нажатии
+		  transform: scale(0.98); // Небольшой эффект сжатия при нажатии
+		}
+	 
+		&:focus {
+		  outline: none; // Убираем стандартное выделение
+		  box-shadow: 0 0 0 4px rgba(77, 10, 2, 0.5); // Добавляем обводку при фокусе
+		}
  
 	  &:disabled {
 		 background-color: #ccc;

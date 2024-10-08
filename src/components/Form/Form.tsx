@@ -3,24 +3,24 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import emailjs from 'emailjs-com';
 import styles from "./Form.module.scss";
-
-
-const validationSchema = Yup.object().shape({
-  name: Yup.string().required('Имя или название компании обязательно'),
-  email: Yup.string().email('Неверный формат email').required('Обязательное поле'),
-  phone: Yup.string().matches(/^\+?[1-9]\d{1,14}$/, 'Неверный формат номера телефона').required('Номер телефона обязателен'),
-  message: Yup.string()
-});
-
-
-const initialValues = {
-  name: '',
-  email: '',
-  phone: '',
-  message: '',
-};
+import { useTranslation } from 'react-i18next';
 
 const ContactForm: React.FC = () => {
+  const { t } = useTranslation('common');
+
+  const validationSchema = Yup.object().shape({
+    name: Yup.string().required(t('form.name_required')),
+    email: Yup.string().email(t('form.email_invalid')).required(t('form.email_required')),
+    phone: Yup.string().matches(/^\+?[1-9]\d{1,14}$/, t('form.phone_invalid')).required(t('form.phone_required')),
+    message: Yup.string(),
+  });
+
+  const initialValues = {
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  };
 
   const sendEmail = (values: typeof initialValues) => {
     emailjs.send(
@@ -56,31 +56,31 @@ const ContactForm: React.FC = () => {
         {({ isSubmitting }) => (
           <Form className={styles.form}>
             <div className={styles.formGroup}>
-              <label htmlFor="name">Как к вам обращаться?</label>
-              <Field name="name" type="text" placeholder="Введите имя или название компании" />
+              <label htmlFor="name">{t('form.name_label')}</label>
+              <Field name="name" type="text" placeholder={t('form.name_placeholder')} />
               <ErrorMessage name="name" component="div" className={styles.error} />
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor="email">Ваш email</label>
-              <Field name="email" type="email" placeholder="Введите вашу почту" />
+              <label htmlFor="email">{t('form.email_label')}</label>
+              <Field name="email" type="email" placeholder={t('form.email_placeholder')} />
               <ErrorMessage name="email" component="div" className={styles.error} />
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor="phone">Ваш номер телефона</label>
-              <Field name="phone" type="text" placeholder="Введите ваш номер телефона" />
+              <label htmlFor="phone">{t('form.phone_label')}</label>
+              <Field name="phone" type="text" placeholder={t('form.phone_placeholder')} />
               <ErrorMessage name="phone" component="div" className={styles.error} />
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor="message">Ваше сообщение</label>
-              <Field name="message" as="textarea" placeholder="Введите ваше сообщение" />
+              <label htmlFor="message">{t('form.message_label')}</label>
+              <Field name="message" as="textarea" placeholder={t('form.message_placeholder')} />
               <ErrorMessage name="message" component="div" className={styles.error} />
             </div>
 
             <button type="submit" disabled={isSubmitting} className={styles.submitButton}>
-              Отправить сообщение
+              {t('form.submit_button')}
             </button>
           </Form>
         )}

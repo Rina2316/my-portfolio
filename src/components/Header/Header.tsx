@@ -5,12 +5,13 @@ import Cooperation from "../CooperationButtons/Cooperation";
 import Image from 'next/image';
 import photo from "../../app/public/icons/photo.jpg";
 import ornament from "../../app/public/icons/ornamentjpg.jpg";
-
+import { useTranslation } from 'react-i18next';
 
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 
 const Header: React.FC = () => {
+  const { t } = useTranslation('common');
   return (
     <header className={styles.header}>
       
@@ -37,8 +38,8 @@ const Header: React.FC = () => {
         />
       </div>
 
-      <Htag tag='h1' className={styles.headerh1}>Портфолио</Htag>
-      <Htag tag="h2" className={styles.headerh1}>Жарковой Екатерины</Htag>
+      <Htag tag='h1' className={styles.headerh1}>{t('header1')}</Htag>
+      <Htag tag="h2" className={styles.headerh1}>{t('header2')}</Htag>
       <div className={styles.headerCooperation}>
         <Cooperation iconType='telegram' socialLink='https://t.me/CReaVirtu' />
         <Cooperation iconType='phone' socialLink='tel:+7(981)265-47-36' />
