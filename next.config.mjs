@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {
+	const nextConfig = {
+		output: 'export',  // Для статического экспорта
+		basePath: '/my-portfolio',  // Указываем базовый путь, совпадающий с названием репозитория
+		assetPrefix: '/my-portfolio/',  // Указываем префикс для статических файлов
+		trailingSlash: true,  // Добавляем слэш в конце путей для совместимости с GitHub Pages
+		images: {
+			unoptimized: true,  // Отключаем оптимизацию изображений (нужно для GitHub Pages)
+		},
 	webpack(config) {
 	  const fileLoaderRule = config.module.rules.find((rule) =>
 		 rule.test?.test?.('.svg'),
@@ -16,7 +23,7 @@ const nextConfig = {
 		 {
 			...fileLoaderRule,
 			test: /\.svg$/i,
-			resourceQuery: { not: /icon/ }, 
+			resourceQuery: { not: /icon/ },
 		 },
 	  );
  
