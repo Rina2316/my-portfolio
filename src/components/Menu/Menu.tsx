@@ -2,7 +2,7 @@
 'use client';
 import { useTranslation } from 'react-i18next';
 import React, { useState } from 'react';
-import styles from './menu.module.scss';
+import styles from './Menu.module.scss';
 
 const Menu: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
