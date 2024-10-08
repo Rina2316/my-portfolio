@@ -2,11 +2,15 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import styles from './scrollToTopButton.module.scss';
-import { ScrollToTopButtonProps } from './ScrollToTopButton.props';
-
-const ScrollToTopButton=({ className, ...props }: ScrollToTopButtonProps)   =>{
-  const [visible, setVisible] = useState<boolean>(false);
+import styles from './ScrollToTopButton.module.scss';
+// Добавляем интерфейс для пропсов, если они понадобятся в будущем
+export interface ScrollToTopButtonProps {
+	className?: string; // Опциональный класс
+ }
+ 
+ const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({ className }) => {
+	const [visible, setVisible] = useState<boolean>(false);
+ 
   useEffect(() => {
 	const handleScroll = () => {
 	  const scrollThreshold = window.innerWidth < 768 ? 600 : 1300; // Снижаем порог для мобильных устройств
@@ -29,7 +33,7 @@ const ScrollToTopButton=({ className, ...props }: ScrollToTopButtonProps)   =>{
 
   return (
     visible && (
-      <button className={styles.scrollToTop} onClick={scrollToTop}>
+      <button className={`${styles.scrollToTop} ${className}`} onClick={scrollToTop}>
         ▲
       </button>
     )
