@@ -10,6 +10,7 @@ import { projects } from '../components/Works/projects';
 import Form from "../components/Form/Form";
 import Menu from '../components/Menu/Menu';
 import ScrollToTopButton from '../components/ScrollToTopButton/ScrollToTopButton';
+import DownloadButton from '../components/DownloadButton/DownloadButton';
 
 // import { usePathname } from 'next/navigation';
 // import i18n from '../I18n/i18n';
@@ -85,6 +86,8 @@ const Home: React.FC = () => {
           </ul>
         </div>
       </div>
+
+      <DownloadButton className={styles.resumeButton} />
 
       <div id="projects">
         <Htag tag="h2" className={styles.tag}>Проекты</Htag>

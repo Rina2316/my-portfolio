@@ -146,6 +146,21 @@
 		 background-color: #ccc;
 		 cursor: not-allowed;
 	  }
+	  &:hover {
+		background-color: #3d0701;
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1); // Более интенсивная тень при наведении
+	 }
+  
+	 &:active {
+		background-color: #2d0501; // Немного затемненный цвет при клике
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Уменьшение тени при нажатии
+		transform: scale(0.98); // Небольшой эффект сжатия при нажатии
+	 }
+  
+	 &:focus {
+		outline: none; // Убираем стандартное выделение
+		box-shadow: 0 0 0 4px rgba(77, 10, 2, 0.5); // Добавляем обводку при фокусе
+	 }
 	}
  }
  

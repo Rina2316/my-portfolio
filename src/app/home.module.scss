@@ -114,5 +114,11 @@ margin: 1rem 2rem;
 }
 	}
 
-	
+	.resumeButton{
+		margin: 0 34.5rem 10rem;
+		
+@media (max-width: 480px) {
+	margin: 0 1rem 10rem;
+}
+	 }
 }
