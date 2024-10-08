@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styles from './layout.module.scss';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
