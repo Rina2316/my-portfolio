@@ -8,7 +8,7 @@ const DownloadButton=({
  }: DownloadButtonProps): JSX.Element  => {
   const handleDownload = () => {
    
-    const fileUrl = "/Recommendation_Letter_Ekaterina_Jarkova.pdf";
+    const fileUrl = "/my-portfolio/Recommendation_Letter_Ekaterina_Jarkova.pdf";
     
    
     const link = document.createElement("a");
