@@ -1,6 +1,6 @@
 // Menu.tsx
 'use client';
-import { useTranslation } from 'react-i18next';
+//import { useTranslation } from 'react-i18next';
 import React, { useState } from 'react';
 import styles from './Menu.module.scss';
 
@@ -19,7 +19,7 @@ const Menu: React.FC = () => {
     }
   };
 
-  const { t } = useTranslation('common');
+ // const { t } = useTranslation('common');
 
   return (
     <div className={styles.menu}>
@@ -29,10 +29,10 @@ const Menu: React.FC = () => {
       {isOpen && (
         <div className={styles.menuPopup}>
           <ul>
-            <li  className ={styles.li} onClick={() => scrollToSection('aboutMe')}>{t('menu1')}</li>
-            <li className ={styles.li} onClick={() => scrollToSection('projects')}>{t('menu2')}</li>
-            <li  className ={styles.li} onClick={() => scrollToSection('technologies')}>{t('menu3')}</li>
-            <li className ={styles.li} onClick={() => scrollToSection('contact')}>{t('menu4')}</li>
+            <li  className ={styles.li} onClick={() => scrollToSection('aboutMe')}>Общая информация</li>
+            <li className ={styles.li} onClick={() => scrollToSection('projects')}>Проекты</li>
+            <li  className ={styles.li} onClick={() => scrollToSection('technologies')}>Технический стек</li>
+            <li className ={styles.li} onClick={() => scrollToSection('contact')}>Обратная связь</li>
           </ul>
         </div>
       )}
