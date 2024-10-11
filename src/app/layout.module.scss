@@ -32,4 +32,8 @@
     position: relative;
     z-index: 2;
   }
+
+  body {
+    overflow-y: hidden;
+  }
 }
