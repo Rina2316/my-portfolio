@@ -7,7 +7,7 @@
 	color: white;
 	border: none;
 	border-radius: 50%;
-	padding: 10px 15px;
+
 	cursor: pointer;
 	font-size: 16px;
 	transition: background-color 0.3s;
@@ -15,6 +15,10 @@
 	width: 3rem;
 	text-align: center;
 	z-index: 1000; // Чтобы кнопка была выше других элементов
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	&:hover {
 		background-color: rgba(165, 163, 158, 0.87);
