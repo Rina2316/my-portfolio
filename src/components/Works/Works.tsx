@@ -7,7 +7,7 @@ import styles from "./Works.module.scss";
 interface Project {
   name: string;
   description: string;
-  link: string;
+  link?: string; // Сделаем ссылку необязательной
 }
 
 interface WorksProps {
@@ -15,10 +15,9 @@ interface WorksProps {
 }
 
 const Works: React.FC<WorksProps> = ({ projects }) => {
-  // Состояние для контроля раскрытия описаний проектов
   const [expandedProjects, setExpandedProjects] = useState<boolean[]>(Array(projects.length).fill(false));
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Функция для переключения состояния раскрытия текста
   const toggleDescription = (index: number) => {
     const updatedExpandedProjects = [...expandedProjects];
     updatedExpandedProjects[index] = !updatedExpandedProjects[index];
@@ -28,8 +27,19 @@ const Works: React.FC<WorksProps> = ({ projects }) => {
   const getGridPosition = (index: number) => {
     const row = index + 1;
     const column = (index % 2) + 1;
-
     return { row, column };
+  };
+
+  const handleIconClick = (link?: string) => {
+    if (!link) {
+      setIsModalOpen(true);
+    } else {
+      window.open(link, "_blank", "noopener,noreferrer");
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -46,23 +56,22 @@ const Works: React.FC<WorksProps> = ({ projects }) => {
             <Htag
               tag="h3"
               className={styles.title}
-              onClick={() => toggleDescription(index)} // Раскрытие по клику на название
+              onClick={() => toggleDescription(index)}
             >
               {project.name}
             </Htag>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
+            <div onClick={() => handleIconClick(project.link)}>
               <WorksIcon className={styles.icon} />
-            </a>
+            </div>
             <Paragraph
               className={styles.info}
               size="m"
-              onClick={() => toggleDescription(index)} // Раскрытие по клику на описание
+              onClick={() => toggleDescription(index)}
             >
               {expandedProjects[index]
                 ? project.description
                 : project.description.slice(0, 100) + '...'}
             </Paragraph>
-            {/* Кнопка "Читать дальше" или три точки */}
             {!expandedProjects[index] ? (
               <span
                 className={styles.readMore}
@@ -81,6 +90,16 @@ const Works: React.FC<WorksProps> = ({ projects }) => {
           </div>
         );
       })}
+
+      {isModalOpen && (
+        <div className={styles.modalOverlay} onClick={closeModal}>
+          <div className={styles.modalContent}>
+            <Htag tag='h3' className={styles.tag}>На сайте ведутся работы</Htag>
+            <Paragraph size='s'>Приносим свои извинения. Пожалуйста, проверьте изменения в ближайшее время.</Paragraph>
+            <button onClick={closeModal}>Закрыть</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

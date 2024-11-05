@@ -1,90 +1,169 @@
-.mainWrapper{
+@import "../../styles/abstracts/fonts.scss";
+.mainWrapper {
 	margin: 10rem 0rem;
-
 	display: grid;
-	grid-template-columns: repeat(2, 1fr); 
-gap: 7rem;
-	.cardWrapper{
-display: flex;
-position: relative;
-@media (max-width: 480px) {
-	flex-direction: column;
-	text-align: center;
-	justify-content: center;
-}
-
-.readMore, .dots {
-	color:  #680b01c5;
-	cursor: pointer;
-	font-size: 2rem;
-	margin-top: 2rem;
-	margin-left: 2rem;
-	margin-bottom: 2rem;
-	user-select: none; 
-	@media (max-width: 480px) {
-		margin-left:0 ;
-		margin-top: 0;
-		font-size: 1.7rem;
-	}
- }
+	grid-template-columns: repeat(2, 1fr);
+	gap: 7rem;
  
- .name{
-	cursor: pointer;
- }
-
-		.title{
-			position: absolute;
-			top:32%;
-			left:-20%;
-			transform: rotate(-90deg);
-			@media (max-width: 480px) {
-				
-				text-align: center;
-				top:-15%;
-			left:32%;
-				transform: rotate(0deg);
-			}
-			
-	
-		}
-		.icon{
-			
-			
-width: 10rem;
-height: 10rem;
-@media (max-width: 480px) {
-	width: 7rem;
-	height: 7rem;
-	filter: drop-shadow(0 0 10px #680b0194);
-}
-
-		}
-		&:hover svg {
-			filter: drop-shadow(0 0 10px #680b0194); /* Красноватое свечение при наведении */
+	@media (max-width: 480px) {
+	  margin: 5rem 0 7rem;
+	  display: flex;
+	  flex-direction: column;
+	  gap: 5rem;
+	}
+ 
+	.cardWrapper {
+	  display: flex;
+	  position: relative;
+ 
+	  @media (max-width: 480px) {
+		 flex-direction: column;
+		 text-align: center;
+		 justify-content: center;
+	  }
+ 
+	  .readMore,
+	  .dots {
+		 color: #680b01c5;
+		 cursor: pointer;
+		 font-size: 2rem;
+		 margin-top: 2rem;
+		 margin-left: 2rem;
+		 margin-bottom: 2rem;
+		 user-select: none;
+ 
+		 @media (max-width: 480px) {
+			margin-left: 0;
+			margin-top: 0;
+			font-size: 1.7rem;
 		 }
-	  
-	  
+	  }
+ 
+	  .name {
+		 cursor: pointer;
+	  }
+ 
+	  .title {
+		 position: absolute;
+		 top: 32%;
+		 left: -20%;
+		 transform: rotate(-90deg);
+ 
+		 @media (max-width: 480px) {
+			text-align: center;
+			top: -15%;
+			left: 32%;
+			transform: rotate(0deg);
+		 }
+	  }
+ 
+	  .icon {
+		 width: 10rem;
+		 height: 10rem;
+ 
+		 @media (max-width: 480px) {
+			width: 7rem;
+			height: 7rem;
+			filter: drop-shadow(0 0 10px #680b0194);
+		 }
+	  }
+ 
+	  &:hover svg {
+		 filter: drop-shadow(0 0 10px #680b0194); /* Красноватое свечение при наведении */
+	  }
+ 
 	  svg {
 		 transition: filter 0.5s ease; /* Плавный переход для свечения */
 	  }
-		
+ 
+	  .info {
+		 border-right: 0.4rem solid black;
+		 cursor: pointer;
+		 padding: 0 5rem;
+ 
+		 @media (max-width: 480px) {
+			border-right: none;
+		 }
+	  }
+	}
+ 
+	.modalOverlay {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  background-color: rgba(0, 0, 0, 0.5);
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	}
+ 
+	.modalContent {
+		background-color: rgba(187, 184, 177, 0.945);
+		border-radius: 8px;
+		border: 0.1rem solid #333;
+		box-shadow: 0 4px 10px #333;
+	  padding: 3rem;
+	  max-width: 400px;
+	  text-align: center;
+	  @media (max-width: 480px) {
+		padding: 2rem;
+		max-width: 200px;
+	 }
 
-		.info{
-			border-right: 0.4rem solid black;
-			cursor: pointer;
-			
-			padding:0 5rem  ;
-			@media (max-width: 480px) {
-				border-right: none;
-			}
-		}
-		
-	}
+	  .tag{
+		margin-bottom: 1.5rem;
+	  }
+	 
+ 
 	
-	@media (max-width: 480px) {
-		margin: 5rem 0 7rem;
-		display: flex;
-		flex-direction: column;
-		gap:5rem;
+ 
+	  button {
+		background-color: #4d0a02;
+		color: rgba(185, 183, 176, 0.938);
+		border: none;
+		padding: 12px 20px;
+		border-radius: 4px;
+		cursor: pointer;
+		font-size: 1.5rem;
+		font-weight: 600;
+		transition: background-color 0.3s ease;
+		font-family: $Htag-font;
+		font-weight: 700;
+		margin-top: 1.5rem;
+
+
+		&:hover {
+			background-color: #3d0701;
+		}
+
+		&:disabled {
+			background-color: #ccc;
+			cursor: not-allowed;
+		}
+
+		&:hover {
+			background-color: #3d0701;
+			box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1); // Более интенсивная тень при наведении
+		}
+
+		&:active {
+			background-color: #2d0501; // Немного затемненный цвет при клике
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Уменьшение тени при нажатии
+			transform: scale(0.98); // Небольшой эффект сжатия при нажатии
+		}
+
+		&:focus {
+			outline: none; // Убираем стандартное выделение
+			box-shadow: 0 0 0 4px rgba(77, 10, 2, 0.5); // Добавляем обводку при фокусе
+		}
+
+		@media (max-width: 480px) {
+			
+		font-size: 1.3rem;
+		 }
+	  }
 	}
-}
+ }
+ 
