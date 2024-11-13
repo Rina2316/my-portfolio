@@ -58,7 +58,7 @@ const Home: React.FC = () => {
         <div className={styles.workExperience}>
           <Htag tag="h2">Опыт работы</Htag>
           <Paragraph size="l">
-Свой путь я начала в Ambition Group — грузинской B2B/B2C компании. Кроме того, я занималась фриланс-проектами и написала множество пет-проектов.
+Свой путь я начала в Ambition Group — грузинской продуктовой компании. Кроме того, я занималась фриланс-проектами и написала множество пет-проектов.
           </Paragraph>
         </div>
       </div>
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
 
       <div id="technologies">
         <Htag tag="h2" className={styles.tag}>Технологии</Htag>
-        <Paragraph size="l" className={styles.greetingANDTechno}>В основном я работаю с такими технологиями, как React/Next.js, ES6 JavaScript, TypeScript, SCSS, Redux и Node.js, а также использую инструменты для анимации, такие как Framer Motion. Однако помимо этого, я имела опыт работы с Vue.JS, Zustand, MobX, Node.JS, Express.JS и PostgreSQL, а также постоянно изучаю новые технологии.
+        <Paragraph size="l" className={styles.greetingANDTechno}>В основном я работаю с такими технологиями, как React/Next.js, ES6 JavaScript, TypeScript, SCSS, Redux и Node.js, а также использую такие инструменты как: Redux, React-admin, React Testing Library, i18n, Framer Motion, Yup, Formik и другие. Однако помимо этого, я имела опыт работы с Vue.JS, Zustand, MobX, Node.JS, Express.JS и PostgreSQL, а также постоянно изучаю новые технологии.
         </Paragraph>
         <Technology />
       </div>
