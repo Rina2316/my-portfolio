@@ -5,6 +5,11 @@ export const projects = [
 	  link: 'https://cut-price.ge/'
 	},
 	{
+		name: 'Architect-blog',
+		description: 'Личный проект. Технологии: Next.js, TypeScript, Strapi и многое другое. Адаптивная верстка.технологии.',
+		link: 'https://rina2316.github.io/Architect/'
+	 },
+	{
 		name: 'GlobalBank',
 		description: 'Личный проект. Технологии: Vue, TypeScript, Pinia, Chart.js, Vite и многое другое. Адаптивная верстка.',
 		link: 'https://rina2316.github.io/GlobalBank/',
