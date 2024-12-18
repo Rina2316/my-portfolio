@@ -19,6 +19,11 @@ export const projects = [
 		description: 'Личный проект. Технологии: Vue, TypeScript, Pinia, Char.js, Vue CLI и многое другое. Адаптивная верстка.',
 		link: 'https://rina2316.github.io/CryptoSite/',
 	 },
+	 {
+		name: 'Most-Wanted',
+		description: 'Личный проект. Технологии: Vue, TypeScript, Vue CLI и многое другое. Адаптивная верстка.',
+		link: 'https://rina2316.github.io/Most-Wanted-Shop/',
+	 },
 	{
 		name: 'TonKeeper',
 		description: 'Личный проект. Технологии: Next.js, TypeScript, Node.js, Web3 и многое другое. Адаптивная верстка.технологии.',
