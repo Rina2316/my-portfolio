@@ -40,6 +40,7 @@ const Header: React.FC = () => {
       <Htag tag='h1' className={styles.headerh1}>Портфолио</Htag>
       <Htag tag="h2" className={styles.headerh1}>Жарковой Екатерины</Htag>
       <div className={styles.headerCooperation}>
+      <Cooperation iconType='github' socialLink='https://github.com/CReaVirtu' />
         <Cooperation iconType='telegram' socialLink='https://t.me/CReaVirtu' />
         <Cooperation iconType='phone' socialLink='tel:+7(981)265-47-36' />
         <Cooperation iconType='mail' socialLink='mailto:kate.jarkova@gmail.com' />

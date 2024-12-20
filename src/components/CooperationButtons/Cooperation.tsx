@@ -4,6 +4,7 @@ import { CooperationProps } from "./Cooperation.props";
 import Telegram from "../../app/public/icons/Telegram.svg?icon";
 import Mail from "../../app/public/icons/Mail.svg?icon";
 import Phone from "../../app/public/icons/Phone.svg?icon";
+import GitHub from "../../app/public/icons/GitHub.svg?icon"
 import { toast } from 'react-hot-toast';
 
 
@@ -23,6 +24,8 @@ const SocialMediaButton = ({
 			 return <Mail />;
 		  case "phone":
 			 return <Phone />;
+			 case "github":
+			 return <GitHub/>;
 		  default:
 			 return null;
 		}

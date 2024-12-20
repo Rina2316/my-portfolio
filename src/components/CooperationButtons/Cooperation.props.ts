@@ -5,6 +5,6 @@ import { DetailedHTMLProps, HtmlHTMLAttributes } from "react";
 export interface CooperationProps extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLButtonElement>,HTMLButtonElement>{
 	className?: string;
   socialLink: string; 
-  iconType: "telegram" | "mail" | "phone";
+  iconType: "telegram" | "mail" | "phone"|"github";
   children?: React.ReactNode; 
 }
