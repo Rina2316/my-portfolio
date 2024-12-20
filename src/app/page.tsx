@@ -11,7 +11,7 @@ import Form from "../components/Form/Form";
 import Menu from '../components/Menu/Menu';
 import ScrollToTopButton from '../components/ScrollToTopButton/ScrollToTopButton';
 import DownloadButton from '../components/DownloadButton/DownloadButton';
-
+import { GitButton } from "../components/GitButton/GitButton";
 // import { usePathname } from 'next/navigation';
 // import i18n from '../I18n/i18n';
 
@@ -106,8 +106,9 @@ const Home: React.FC = () => {
       <div id="projects">
         <Htag tag="h2" className={styles.tag}>Проекты</Htag>
         <Paragraph size="l" className={styles.tag}>
-       Ниже представлены мои работы, с которыми вы можете ознакомится наглядно, нажав на иконку.
+       Ниже представлены мои работы, с которыми вы можете ознакомится наглядно, нажав на иконку или перейдя в мой Git.
         </Paragraph>
+        <GitButton className={styles.git}/>
         
         <Works projects={modifiedProjects} />
       </div>
