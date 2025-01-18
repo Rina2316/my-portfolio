@@ -2,7 +2,7 @@ export const projects = [
 	{
 	  name: 'CutPrice',
 	  description: 'Коммерческий проект. Продуктовая разработка. Технологии: Next.js, TypeScript, Redux, React-admin, i18n и многое другое. Адаптивная верстка, работа с анмимациями(Framer Motion)',
-	  link: 'https://cut-price.ge/'
+	  link: ''
 	},
 	{
 		name: 'Architect-blog',
@@ -11,17 +11,22 @@ export const projects = [
 	 },
 	{
 		name: 'GlobalBank',
-		description: 'Личный проект. Технологии: Vue, TypeScript, Pinia, Chart.js, Vite и многое другое. Адаптивная верстка.',
+		description: 'Личный проект. Технологии: Vue3, TypeScript, Pinia, Chart.js, Vite и многое другое. Адаптивная верстка.',
 		link: 'https://rina2316.github.io/GlobalBank/',
+	 },
+	 {
+		name: 'Rick&Morty',
+		description: 'Личный проект. Технологии: Vue2, JavaScript, Vuex, Vue CLI и многое другое. Адаптивная верстка.',
+		link: 'https://rick-and-morty-amber-ten.vercel.app/',
 	 },
 	{
 		name: 'CryptoSite',
-		description: 'Личный проект. Технологии: Vue, TypeScript, Pinia, Char.js, Vue CLI и многое другое. Адаптивная верстка.',
+		description: 'Личный проект. Технологии: Vue3, TypeScript, Pinia, Char.js, Vue CLI и многое другое. Адаптивная верстка.',
 		link: 'https://rina2316.github.io/CryptoSite/',
 	 },
 	 {
 		name: 'Most-Wanted',
-		description: 'Личный проект. Технологии: Vue, TypeScript, Vue CLI и многое другое. Адаптивная верстка.',
+		description: 'Личный проект. Технологии: Vue3, TypeScript, Vue CLI и многое другое. Адаптивная верстка.',
 		link: 'https://rina2316.github.io/Most-Wanted-Shop/',
 	 },
 	{
